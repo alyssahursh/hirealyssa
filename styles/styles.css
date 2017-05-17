@@ -128,19 +128,16 @@ nav.right a:visited {
   color: #31826b;
 }
 
-nav a:hover {
+nav.left a:hover,
+nav.right a:hover {
   -webkit-transform: scale(1.05);
   transition-duration: .3s;
 }
 
 @media screen and (max-width: 900px) {
   nav {
-    background-color: #2C2C40;
-    color: #FFFFFF;
-    display: flex;
-    padding: 2rem;
-    width: calc(100% - 4rem);
-    flex-wrap: wrap;
+    display: block;
+    width: calc(100%);
   }
 
   nav a,
@@ -156,19 +153,31 @@ nav a:hover {
   }
 
   nav.mobile {
+    display: block;
+  }
+
+  nav .mobile-navbar {
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
+    background-color: #2C2C40;
+    color: #FFFFFF;
   }
 
   nav i {
   }
 
-  nav.left {
-    text-align: left;
-  }
 }
 
+nav .dropdown {
+  background-color: #36364f;
+  padding: 2rem;
+  display: none;
+}
 
+nav .dropdown a {
+  display: block;
+}
 
 
 
@@ -444,6 +453,12 @@ img.headshot {
   width: calc(100% - 5.5rem);
   transition-duration: .5s;
   transition-property: margin, padding, box-shadow;
+  cursor: pointer;
+}
+
+.double {
+  width: calc(100% - .8rem);
+  margin: 0 auto;
 }
 
 .project:hover {
@@ -451,6 +466,10 @@ img.headshot {
   box-shadow: 0 30px 60px -15px rgba(	54, 54, 79, .3), 0 25px 40px -20px rgba(0, 0, 0, .1);
   transition-duration: ..2s;
   transition-property: margin, padding, box-shadow;
+}
+
+.double .project:hover {
+  padding: 2.25rem;
 }
 
 .project h3 {
@@ -581,25 +600,40 @@ img.headshot {
 
 footer {
   background-color: #222231;
-  padding: 5rem 10rem;
-  margin-top: 10rem;
+  display: flex;
+  padding: 3.5rem 20rem;
+  margin-top: 3.5rem;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  footer {
+    padding: 3.5rem 10rem;
+  }
+}
+
+footer div {
+  width: 30%;
+}
+
+footer div.contact {
+  width: 40%;
 }
 
 footer h3 {
   color: #6d6d72;
-  font-size: 2.5rem;
-  padding: 1rem 20% 3rem;
+  font-size: 2.3rem;
 }
 
-footer a:link {
+footer a:link h4,
+footer a:visited h4 {
   font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
   color: #a7cbd2;
-  display: inline-block;
   margin: 0 3rem;
 }
 
-footer a:link:hover {
+footer a:link:hover h4 {
   color: #B8D5DB;
 }
 
@@ -607,17 +641,22 @@ footer a:link:hover {
   footer {
     margin-top: 3rem;
     padding: 2.5rem 3rem 5rem;
+    flex-direction: column;
+  }
+
+  footer div,
+  footer div.contact {
+    width: 100%;
   }
 
   footer h3 {
-    padding: 0 0 1rem;
+    padding: 3rem 0 0;
     font-size: 2rem;
   }
 
   footer h4 {
     margin: 0;
     font-size: 2rem;
-
   }
 
   footer a {
