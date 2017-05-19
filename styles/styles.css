@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Lora|Quicksand|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Lora|Quicksand|Roboto+Condensed|Raleway:300,400,500');
 
 /****************************************/
 /***         FONTS AND LINKS          ***/
 /****************************************/
 
 a:link {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -67,7 +68,8 @@ main {
 
 .slide,
 .pullquote,
-.project {
+.project,
+.resume {
   box-shadow: 0 10px 25px -15px rgba(	54, 54, 79, .3), 0 5px 20px rgba(0, 0, 0, .1);
 }
 
@@ -601,6 +603,7 @@ img.headshot {
 footer {
   background-color: #222231;
   display: flex;
+  flex-direction: row;
   padding: 3.5rem 20rem;
   margin-top: 3.5rem;
   text-align: center;
@@ -661,5 +664,217 @@ footer a:link:hover h4 {
 
   footer a {
     margin: 0;
+  }
+}
+
+
+
+/****************************************/
+/***             RESUME               ***/
+/****************************************/
+
+.resume {
+  background-color: #FFF;
+  max-width: 900px;
+  margin: 3rem auto 10rem;
+  padding: 8rem 5rem;
+}
+
+@media (max-width: 900px) {
+  .resume {
+    width: calc(98% - 5rem);
+    margin: 1rem auto;
+    padding: 5rem 2rem;
+  }
+}
+
+.resume h1 {
+  font: normal normal 4.5rem/1 "Lora", serif;
+  letter-spacing: .1rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .resume h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.resume h2 {
+  font: normal normal 500 2rem/1 "Raleway", serif;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .resume h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.cv-entry {
+  display: flex;
+  margin: 0 0 4rem;
+}
+
+@media (max-width: 900px) {
+  .cv-entry {
+    flex-direction: column;
+  }
+}
+
+.cv-entry .logo {
+  flex-basis: 32%;
+  width: 32%;
+}
+
+.cv-entry .logo a img {
+  width: calc(100% - 6rem);
+  padding: 1rem 3rem;
+  filter: grayscale(100%);
+}
+
+.cv-entry .logo.smaller a img {
+  width: calc(100% - 14rem);
+  padding: 1rem 3rem 1rem 11rem;
+}
+
+.cv-entry .logo.medium a img {
+  width: calc(100% - 10rem);
+  padding: 1rem 3rem 1rem 7rem;
+}
+
+@media (max-width: 900px) {
+  .cv-entry .logo {
+    flex-basis: 100%;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .cv-entry .logo a img {
+    width: calc(100% - 10rem);
+    padding: 1rem 5rem;
+  }
+
+  .cv-entry .logo.smaller a img {
+    width: calc(100% - 20rem);
+    padding: 1rem 10rem;
+  }
+
+  .cv-entry .logo.medium a img {
+    width: calc(100% - 16rem);
+    padding: 1rem 8rem;
+  }
+}
+
+.cv-entry .description {
+  flex-basis: 80%;
+  text-align: left;
+  border-left: 1px solid #d3d3d3;
+  padding: 0 3rem;
+}
+
+@media (max-width: 900px) {
+  .cv-entry .description {
+    padding: 0 1rem;
+    border: none;
+  }
+}
+
+.description h3,
+.description h4 {
+  text-align: left;
+}
+
+.description h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.1rem;
+  font: normal 500 2rem/1.5 "Raleway", sans-serif;
+}
+
+.description h4 {
+  font: normal 400 1.75rem/1.75 "Raleway", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .description h3,
+  .description h4 {
+    text-align: center;
+  }
+
+  .description h3 {
+    font: normal 500 1.7rem/1.7 "Raleway", sans-serif;
+    margin: 1rem 0;
+  }
+
+  .description h4 {
+    font: normal 400 1.6rem/1.75 "Raleway", sans-serif;
+  }
+}
+
+ul {
+  padding: 0 0 0 2rem;
+  margin: 0 0 1.5rem 0;
+}
+
+li {
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: -2em;
+  padding: 0 0 .2rem 1em;
+  font: normal 300 1.5rem/1.5 'Raleway', sans-serif;
+  letter-spacing: .05rem;
+}
+
+.contact-columns {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.resume .contact h4 {
+  text-align: left;
+  padding: 0 3rem;
+  line-height: 1;
+  font-size: 1.9rem;
+}
+
+@media (max-width: 900px) {
+  .contact-columns {
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .resume .contact h4 {
+    padding: 0;
+  }
+}
+
+.bio {
+  padding: 0 3rem 6rem;
+}
+
+.bio h4 {
+  display: inline;
+  font: normal normal 1.9rem/1 "Lora", serif;
+  padding-right: 0.5rem;
+}
+
+.bio p {
+  display: inline;
+  font: normal normal 300 1.5rem/1.2 "Raleway", sans-serif;
+  letter-spacing: .05rem;
+}
+
+@media (max-width: 900px) {
+  .bio {
+    padding: 0 2rem 6rem;
+  }
+}
+
+@media print {
+  .resume {
+    padding: 2rem;
   }
 }
